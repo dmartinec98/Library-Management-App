@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xdb="http://www.borland.com/schemas/delphi/10.0/XMLDataBinding">
+	<xs:element name="knjiznica" type="knjiznicaType"/>
+	<xs:complexType name="knjiznicaType"><xs:annotation>
+			<xs:appinfo xdb:docElement="knjiznica"/>
+		</xs:annotation>
+		<sequence xmlns="http://www.w3.org/2001/XMLSchema">
+			<xs:element name="ljudi" type="ljudiType" maxOccurs="unbounded"/>
+		</sequence>
+	</xs:complexType>
+	<xs:complexType name="ljudiType"><xs:annotation>
+			<xs:appinfo xdb:repeated="True"/>
+		</xs:annotation>
+		<sequence xmlns="http://www.w3.org/2001/XMLSchema">
+			<xs:element name="id" type="xs:integer"><xs:annotation>
+          <xs:appinfo xdb:dataType="System::UnicodeString"/>
+        </xs:annotation>
+      </xs:element>
+			<xs:element name="korisnik" type="xs:string"/>
+			<xs:element name="biljeska" type="xs:string"/>
+		</sequence>
+	</xs:complexType>
+</xs:schema>
